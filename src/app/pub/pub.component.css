@@ -1,0 +1,63 @@
+.L{
+  font-size:25px;
+  color: white;
+  margin-left: 35%;
+  padding-top:10px ;
+  font-weight:100;
+  font-family:poppins,bold;
+}
+.nav-item{
+  padding:6px;
+}
+.card-img-top{
+  max-width: 400px;
+  margin-left: 930px;
+  margin-top: -30%;
+}
+.bien{
+  margin-top: -380px;
+  margin-left: 6%;
+  font-size: 40px;
+  color: #FF5330;
+  font-family:poppins,bold;
+
+}
+.pub{
+  margin-left: 6%;
+  font-size: 70px;
+  color: #2B2B68;
+  font-family:poppins;
+font-stretch:extra-expanded;
+font-weight: 570;
+}
+.img1{
+margin-left: 2%;
+max-width: 70px;
+margin-top: -2.9%;
+}
+.img2{
+  margin-left: 5%;
+  max-width: 1110px;
+  margin-top: -7.5%;
+
+}
+h5{
+color: white;
+font-family:poppins,bold;
+font-size: large;
+
+}
+.bouton{
+  background-color: #FF5330;
+  border:2px solid #FF5330;
+  border-radius: 0%;
+  margin-left: 6%;
+}
+.col{
+  padding: 30px;
+}
+.box{
+  background-color: #2B2B68;
+
+}
+

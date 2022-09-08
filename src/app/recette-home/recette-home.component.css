@@ -1,0 +1,76 @@
+
+.recipe-categories{
+    margin-left: 10%;
+    }
+    .categorie{
+        background-image: url('../../assets/image/Group836.png');
+        width: 11%;
+        color: #2B2B68;
+        font-weight: bold;
+        margin-bottom: 10%;
+    
+    }
+    .center{
+        display: block;
+        /* margin-left: -10%; */
+        margin-right: auto;
+    }
+    .recipe-title{
+        width: 50%;
+        margin-left: 25%;
+    }
+    .recipe-img{
+        border-radius: 5%;
+    
+    }
+    .recipe-cart{
+        position: relative;
+        width: 336px;
+        height: 320px;
+    }
+    .all-recipes{
+        margin-left: 7%;
+    }
+    .recipe-time{
+        position: absolute;
+        bottom: 10px;
+        left: 25px;
+    }
+    .recipe-type{
+        position: absolute;
+        bottom: 10px;
+        right: 90px;
+    }
+    .recipe-heart{
+        background-color: white;
+        color: red;
+        width: 12%;
+        height: 12%;
+        position:absolute;
+        top: 25px;
+        right: 10px;
+    }
+    .recipe-heart-icon{
+        margin: 30%;
+    }
+    .nutri-btn{
+        color:white;
+        background-color: #FF5330;
+        border: none;
+        border-radius: 8px;
+        padding: 2%;
+    }
+    .health h1{
+        font-size:60px
+    }
+    
+    @media (max-width: 550px) {
+        .categorie{
+            width: 40%;
+            color: #2B2B68;
+            font-weight: bold;
+            margin-bottom: 10%;
+        
+        }  
+        
+    }

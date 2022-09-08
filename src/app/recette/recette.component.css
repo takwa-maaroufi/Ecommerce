@@ -1,0 +1,149 @@
+.m{
+width: 30%;
+padding: 0.35%;
+}
+.T{
+  width:60%;
+  padding: 0.35%
+}
+.body{
+  margin-top: 20%;
+  margin-left: 20%;
+}
+.card1{
+  width:36%;
+  position: absolute;
+  background-color: rgb(233, 233, 233);
+  height: 44%;
+  margin-top: -14%;
+  margin-left:20%;
+  opacity: 0.5;
+}
+.card1:hover{
+  transform: scale(1.03,1.0.3);
+}
+.bouton{
+  background-color: #FF5330;
+  border:2px solid #FF5330;
+  border-radius: 0%;
+  width: 30%;
+  margin-left: -1%;
+
+}
+.content{
+  margin-left: 35%;
+  width: 28%;
+  margin-top: -150px;
+}
+@media (max-width:1336px) {
+  .card1 {
+   
+    height: 35% !important;
+}
+}
+@media (max-width:1108px) {
+  .card1 {
+   
+    height: 30% !important;
+}
+.content {
+  margin-left: 30%;
+  width: 38%;
+}
+}
+@media (max-width:1053px) {
+  .card1 {
+    height: 25% !important;
+}
+.content p {
+  margin-top: 5%;
+  font-size: 110% !important;
+  margin-left: 0% !important;
+}
+.content .bouton {
+  width: auto;
+}
+}
+@media (max-width:969px) {
+  .card1 {
+    height: 20% !important;
+}
+.content p {
+  margin-top: 10%;
+  font-size: 90% !important;
+  margin-left: 0% !important;
+}
+.content .bouton {
+  width: auto;
+}
+}
+@media (max-width:831px) {
+  .card1 {
+    height: 19% !important;
+    /* margin-top: -21%;
+    margin-left: 36%;
+    width: 50%; */
+}
+.content {
+  margin-left: 10%;
+  margin-top: -110px;
+}
+.content p {
+  margin-top: 3%;
+  margin-left: 37% !important;
+}
+.content .bouton {
+  font-size: smaller;
+  margin-left: 50%;
+}
+}
+
+@media (max-width:814px) {
+  .card1 {
+    height: 15% !important;  
+    
+}
+}
+@media (max-width:768px) {
+  .card1 {
+    height: 19% !important; 
+    margin-top: -21%;
+    margin-left: 33%; 
+    width: 50%;
+}
+
+.content {
+  margin-left: 35%;
+  margin-top: -150px;
+}
+
+}
+@media (max-width:703px) {
+  .card1 {
+    height: 19% !important;
+    margin-top: -21%;
+    margin-left: 33%;
+}
+.content p {
+  margin-top: 15%;
+  margin-left: 20% !important;
+}
+.col-md-8{
+  margin-left: 10%;
+}
+.content .bouton{
+  margin-left: 35%;
+}
+}
+@media (max-width:593px) {
+  .card1 {
+    height: 15% !important;
+    margin-top: -21%;
+    margin-left: 33%;
+}
+.content p {
+  margin-top: 20%;
+  margin-left: 15% !important;
+}
+
+}

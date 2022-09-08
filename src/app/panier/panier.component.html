@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+  <h3>Panier<div style="color: #2B2B68;margin-top: -2%;margin-left: -12%;" > <i style ="margin-top: -10%; margin-left: 58%; color: #2B2B68;"class="fa-solid fa-truck fa-2ms"></i> <p style="margin-top:-2.3%;font-size: 50%;margin-left: 61%;">Livraison standard <br>Gratuite sous 3 à 6 jours ouvrés</p>
+    <div style="margin-top: -53px;margin-left: 10%;"> <i style =" color: #2B2B68; margin-left: 80%; margin-top: -83px;" class="fa-solid fa-truck-fast fa-2ms"></i><p style="font-size: 50%;margin-left: 83% ;margin-top:-2.5%;">Express delivery<br> 10,00 TND available</p>
+    </div></div></h3></div>
+
+  <ng-container *ngIf="cartObj.length !=0">
+  <div class="row">
+    <div class="col-sm-6">
+            <div class="card-table"*ngFor="let cart of cartObj">
+                <div class="cart-product" >
+                      <table class="table table-responsive">
+                          <tbody>
+                                <td ><img style=" position: absolute;margin-top: 1%;margin-bottom: 5% ;height :130px;width:100px;margin-left: 1px;"  class="card-img-top img-responsive"
+                                  src="data:image/png;base64,{{cart.imageURL}}" alt=""></td>
+                                  <td style="margin-left: 5%;"><p style="font-size:20px; margin-left: -5%;position: absolute; color: #2B2B68; font-weight: 500; font-family: poppins,bold;margin-top: 1%; ">{{cart.productName}} /*{{cart.qty}}</p><br>
+                                  <button href="#"  style="border:none;margin-left: -5%;position: absolute; width:20%;border-radius:0%;margin-top: 10%; background-color:#2B2B68;border: #2B2B68;color: white;" (click)="removeCartById(cart)"><i class="bi bi-trash3" style="margin-left: -20%; padding-right:6%; color: white;"></i>Supprimer</button><br>
+                                </td>
+                                <td style="margin-left: 5%;"><div class ="content"style=" ;margin-left: 29%;width:13%;  margin-top:13%; position: absolute; background-color:whitesmoke;height:22%"  >
+                                   <button (click)="decrementQty(cart,cart.qty)"     style="border:none; margin-top:4% ;margin-left :6%; font-size:47% ;border: whitesmoke ; border-radius: 0%; background-color: whitesmoke;"><i class="bi bi-dash fa-2xl" style="color: #2B2B68;"></i></button>
+                     <span>  <span  style="color: #1e1e40; border:2px solid whitesmoke; max-width: 20%;background-color: whitesmoke;">{{cart.qty}}</span></span>
+                                   <button (click)="incrementQty(cart,cart.qty)" style="border:none;margin-top:4% ;font-size: 47%; border-radius: 0%; border: whitesmoke ;background-color: whitesmoke;"><i class="bi bi-plus fa-2xl" style="color: #2B2B68;"></i></button>
+
+                                  </div></td>
+                                  <td style="margin-left: 150%;"><p style="font-size:20px;margin-top: 2%; position: absolute ;margin-left: 8%;color: #2B2B68; font-weight: 600; font-family: poppins,bold;">{{cart.price }} TND</p></td>
+                              <td style="margin-left: 5%;"> <p style="font-size:15px;margin-top: 7%; position: absolute ;margin-left:-12%;color: #FF5330; font-weight: 600; font-family: poppins,bold;">Gagner 0.2%</p></td>
+
+                            </tbody>
+                      </table>
+                 </div>
+
+             </div>
+    </div>
+    <div class="col-sm-6 ">
+   <div class="card" style="border: white; height:22rem;margin-left: 10%;width: 37%;position: absolute;margin-bottom:6%; ">
+          <div class="col-sm-6" style="width: 95%;height: 122%; border: 2px solid #2B2B68;margin-top: -8.7%;margin-left: -8%; border-radius: 0%;">
+                <div style="margin-left: 5%; color: hsl(240, 41%, 29%); font-weight: 600; font-family: poppins,bold; font-size: 150%; margin-top: 5%;"> Sous-Total  </div>
+                <div style="color:#FF5330; font-weight: 600; font-family: poppins,bold; margin-left: 70%;margin-top: -6.5%;font-size: 150%;">{{cartTotalPrice }} TND   </div>
+           <div style="margin-left: 5%; color:rgb(172, 171, 171); font-weight: 400; font-family: poppins,bold; font-size:larger; margin-top: 5%;margin-bottom: 10ù;"> Frais de Livraison 7 TND </div>
+              <div style="position: absolute; margin-top:13% ;margin-left:22%; margin-bottom: 3%;">
+                <button   style="background-color:#FF5330; border:#FF5330; border-radius:0%;width:170%; padding:10%;color: white;" routerLink="/checkout">Valider la commande</button><br>
+                <button  style=" padding:10%;margin-top:5%; background-color:#2B2B68; border:#FF5330; border-radius:0%; width:170%;;color: white;"(click)="removeAllCart()">Vider mon panier</button><br>
+              </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="cartObj.length ==0">
+  <div class="container">
+      <div class="card">
+          <h5 class="card-title">Panier</h5>
+      </div>
+      <div class="center" style="margin-top: 10%;">
+          <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
+          <h4>Votre Panier est vide</h4>
+          <h6>Ajouter un produit </h6>
+          <button routerLink="/products" class="btn btn-primary">Shop Now</button>
+      </div>
+  </div>
+</ng-container>
+</body>
+</html>

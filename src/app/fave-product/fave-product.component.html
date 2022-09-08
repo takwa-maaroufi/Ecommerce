@@ -1,0 +1,66 @@
+
+
+<div class="container-fluid "style="background-color:whitesmoke; padding-top:3%; margin-top:5%;padding-bottom :3px;margin-bottom:5%">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card " style="padding-bottom: 20px; padding-top:0%; width: 400px;margin-left: 150px; background-color: white;">
+        <div class="sidebar">
+          <a href="#" class="active " id="primary" ><i  class="bi bi-person fa bi1"></i> Votre compte 360 tn</a>
+          <a href="#" id="primary"  autocomplete="off"><i class="bi bi-box-arrow-in-down bi1"></i> Historique de commandes</a>
+          <a routerLink="faves"  id="primary" autocomplete="off"><i class="bi bi-heart bi1"></i> Produits préférés</a>
+          <a href="#"  id="primary" autocomplete="off"><i class="bi bi-chat-dots bi1"></i> Communication préférence</a>
+          <a href="#"  id="primary" ><i class="bi bi-gift bi1"></i> Vos crédit 360 tn</a>
+
+        </div>
+        <input
+            class="btn btn-primary btn-lg deco" type="submit" value="Déconnexion" />
+      </div>
+    </div>
+    <div class="col-sm-6 ">
+      <div class="container-fluid   " style="background-color: white;  margin-left:-30.1% ;   width: 115%;
+      height: fit-content;
+      border: 2px solid #2B2B68;
+      border-radius: 0%;
+      padding-bottom: 2px;
+
+      ">
+        <div class="card-body  ">
+          <h2 class="card-title" style="padding-top: 3%;padding-bottom: 3%;font-size:large;">Produits préférés</h2>
+          <div class="hr1"></div>
+
+
+  <ng-container *ngIf="WishItems.length !=0">
+    <div class="row">
+      <div class="col-sm-6">
+                  <div class="cart-product" *ngFor="let wish of WishItems">
+                        <table class="table table-responsive">
+                            <tbody>
+                                  <tr >
+                                    <td><img style=" position: absolute;height :110px;width:95px;margin-left: 1px;"  class="card-img-top img-responsive"
+                                    src="data:image/png;base64,{{wish.imageURL}}" alt="">
+                                  </td>
+                                <div class="card-tile" style="margin-top:2%; margin-left: 3%"><span style="color: #2B2B68; margin-left: 3%;margin-bottom: 0%;"  >{{wish.productName}} /*{{wish.qty}}
+                                  <span style="margin-bottom:-2%;">
+                                  <button (click)="addCart(wish)"style="color: white;margin-top: -70px;background-color: #FF5330 ; border: 2px solid #FF5330 ;padding: 4px 32px; border-radius: 0%; margin-left: 77.4%;height:2%;margin-top: -3%;" class="btn primary-btn cart" ><i class="bi bi-cart" ></i> J'achète</button>
+                                </span></span></div>
+
+                                <div style="color: 2B2B68;margin-left: 6%;margin-top: -2%;"><span style="color: #2B2B68;margin-top: 8% ;">Price: {{wish.price}} TND <span>
+                                  <button (click)="remove(wish)" style="color: #2B2B68; background-color: white; border: 2px solid #2B2B68; border-radius: 0%; margin-left: 64.5%;padding-left: 3.5%;padding-right: 3%;" class="btn primary-btn trash" ><i class="bi bi-trash3" ></i> Supprimer</button>
+                                </span></span></div>
+
+                                </tr>
+
+
+                              </tbody>
+                        </table>
+                   </div>
+
+               </div>
+      </div>
+
+
+
+  </ng-container>
+        </div>
+  </div>
+  </div>

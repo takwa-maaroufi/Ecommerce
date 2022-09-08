@@ -1,0 +1,185 @@
+
+<section class="hv-100  gradient-custom">
+  <div class="container py-8 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 0px; margin-top: 2%; ">
+          <div class="card-body p-2 p-md-5">
+            <h3 class="mb-4  pb-md-0 mb-3 md-5">Bienvenue</h3>
+            <p style="  color: #2B2B68; font-weight: 500; font-family: bold,poppins; font-size: x-large;">Créez un compte pour profiter de tous les avantages</p>
+            <form [formGroup]="registerForm"  (ngSubmit)="onSubmit()">
+              <div class="row">
+                <label class="form-label" for="civilité" style="font-size: 130%; color:#2B2B68; margin-left: 2%;" >Civilité *</label>
+
+                <div class="col mb-4" style="margin-left: 13%;">
+                  <div class=" form-check form-check-inline">
+                    <input class=" form-check-input" type="checkbox" id="Madame" value="Madame" checked>
+                    <label class="form-check-label "for="Monsieur">Madame</label>
+                  </div>
+                </div>
+                <div class="col mb-4">
+                  <div class=" form-check form-check-inline" style="margin-left: -25%;">
+                    <input  class=" form-check-input" type="checkbox" id="Monsieur"  value="Monsieur">
+                    <label class="form-check-label" for="Monsieur">Monsieur</label>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class=" col-md-6 mb-4">
+
+                  <div class="form-group form-outline">
+                    <input   type="text" id="firstName" formControlName="firstName"  placeholder="Nom *" [(ngModel)]="firstName"class="form-control form-control-lg" />
+                    <div *ngIf="f.firstName.touched && f.firstName.invalid" class="alert alert-danger">
+                      <div *ngIf="f.firstName.errors && f.firstName.errors.required">Nom est Obligatoire.</div>
+                  </div>
+
+                  </div>
+                </div>
+                <div class=" col-md-6 mb-4">
+                  <div class="form-group form-outline">
+                    <input  type="text"  id="lastName" placeholder="Prénom *" formControlName="lastName"  [(ngModel)]="lastName"class="form-control form-control-lg" />
+                    <div *ngIf="f.lastName?.touched && f.lastName.invalid" class="alert alert-danger">
+                      <div *ngIf="f.lastName.errors && f.lastName.errors.required">Prénom est obligatoire.</div>
+                  </div>
+                       </div>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class=" col-md-6 mb-4 pb-2">
+
+                  <div class="form-group form-outline mt-2 ">
+                    <input [(ngModel)]="email"  type="text" id="email" formControlName="email"  class="form-control form-control-lg" aria-describedby="emailHelp" placeholder="Email *" />
+                    <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                      <div *ngIf="f.email.errors && f.email.errors.required">Email est obligatoire.</div>
+                      <div *ngIf="f.email.errors && f.email.errors.email">Svp, entrer une adresse email valide.</div>
+                  </div>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4 pb-2 mt-2">
+
+                  <div class="form-group form-outline">
+                    <input  [(ngModel)]="password"  type="password" formControlName="password" placeholder="Mot de passe *" id="password" class="form-control form-control-lg" />
+                    <div *ngIf="f.password?.touched && f.password.invalid" class="alert alert-danger">
+                      <div *ngIf="f.password.errors && f.password.errors.required">Mot de passe est Obligatoire.</div>
+                      <div *ngIf="f.password.errors && f.password.errors.minlength">mot de passe doit contenir au minimaum 6 caractéres.</div>
+                  </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row"style="margin-bottom:2%%;">
+                <div class=" col-md-6 mb-2 ">
+                  <div class="form-group form-outline">
+                    <input [(ngModel)]="tel" type="text"placeholder="Téléphone *" formControlName="tel" id="tel" class="form-control form-control-lg" />
+                    <div *ngIf="f.tel?.touched && f.tel.invalid" class="alert alert-danger">
+                      <div *ngIf="f.tel.errors && f.tel.errors.required">Numero de téléphone est obligatoire.</div>
+                      <div *ngIf="f.tel.errors && f.tel.errors.minlength">Svp, Entrer 8 chiffres.</div>
+                  </div>
+                  </div>
+                  </div>
+
+                <div class=" col-md-6 mb-4 pb-2">
+                  <div  class="form-group form-outline">
+                    <input   [(ngModel)]="date" style="width: 98%;" placeholder="Date de naissance *" formControlName="date" required pattern="^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$" type="text" onfocus="(this.type='date')" id="date" class="form-control form-control-lg textbox-n">
+                    <i class="bi bi-calendar3 "style="font-size:130%; background-color:white; color:#2B2B68; position: absolute; margin-top:-4%;margin-left:40%;"></i>
+                    <label ></label>
+                    <div *ngIf="f.date.touched && f.date.invalid" class="alert alert-danger">
+                      <div *ngIf="f.date.errors && f.date.errors.required">Date de naissance est Obligatoire</div>
+                  </div>
+                  </div>
+                </div>
+                </div>
+              <div class="row pt-0">
+                <div  class=" col-md-6 mb-4">
+                  <div class="form-group form-outline">
+                    <select [(ngModel)]="profession" formControlName="profession"  id="profession"  name="profession" class="form-control form-select form-control-lg"style="width:100%; color: #2B2B68;">
+                      <option value="1"  >Profession  *</option>
+                      <option *ngFor="let p of Professions"  >{{p.name}}</option>
+                    </select>
+                    <div *ngIf="f.profession.touched && f.profession.invalid" class="alert alert-danger">
+                      <div *ngIf="f.profession.errors && f.profession.errors.required">Profession est Obligatoire.</div>
+                  </div>
+                  </div>
+                  </div>
+                <div  class=" col-md-6 mb-4 ">
+                  <div class="form-group form-outline" >
+                    <select  [(ngModel)]="situationFamilliale" formControlName="situationFamilliale" id="situationFamilliale" name="situationFamilliale"  placeholder="Adresse * " [(ngModel)]="situationFamilliale" class="form-control form-select form-control-lg"style="width:100%; color: #2B2B68;">
+                      <option value="1"  >Situation Familliale *</option>
+                      <option *ngFor="let s of SituationFamilliale"  >{{s.name}}</option>
+
+                    </select>
+                    <div *ngIf="f.situationFamilliale.touched && f.situationFamilliale.invalid" class="alert alert-danger">
+                      <div *ngIf="f.situationFamilliale.errors && f.situationFamilliale.errors.required">Situation Familliale est Obligatoire.</div>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="row">
+                <div  class=" col-md-6 mb-4">
+
+                  <div class="form-group form-outline">
+                    <input  [(ngModel)]="adress" type="text" id=" adress" formControlName="adress"  placeholder="Adresse *"class="form-control form-control-lg" />
+                    <div *ngIf="f.adress.touched && f.adress.invalid" class="alert alert-danger">
+                      <div *ngIf="f.adress.errors && f.adress.errors.required">Adresse est obligatoire.</div>
+                  </div>
+                  </div>
+
+                </div>
+                <div  class=" col-md-6 mb-4">
+                  <div class="form-group form-outline">
+                    <input  [(ngModel)]="ville"  type="text" id="ville" formControlName="ville" placeholder="Ville *" class="form-control form-control-lg" />
+                    <div *ngIf="f.ville.touched && f.ville.invalid" class="alert alert-danger">
+                      <div *ngIf="f.ville.errors && f.ville.errors.required">Ville est obligatoire.</div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div  class=" col-md-6 mb-4">
+
+                  <div class="form-group form-outline">
+                    <select  id="gouvernorat" formControlName="gouvernorat" name="gouvernorat" [(ngModel)]="gouvernorat" class="form-control form-select form-control-lg"style="width:100%; color: #2B2B68;">
+                      <option value="1"  >Gouvernorat *</option>
+                      <option *ngFor="let g of Gouvernorat"  >{{g.name}}</option>
+                    </select>
+                    <div *ngIf="f.gouvernorat?.touched && f.gouvernorat.invalid" class="alert alert-danger">
+                      <div *ngIf="f.gouvernorat.errors && f.gouvernorat.errors.required">Gouvernorat est obligatoire.</div>
+                  </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="form-group custom-file" placedolder="Photos">
+                      <input type="file" id="file" class="form-control" formControlName="image" [(ngModel)]="image" (change)="img($event.target)">
+                      <label  for="file">Photos
+                        <i class="bi bi-images " style="margin-left:270px;">
+                        </i>
+                      </label>
+                      <div *ngIf="f.image?.touched && f.image.invalid" class="alert alert-danger">
+                        <div *ngIf="f.image.errors && f.image.errors.required">Image est Obligatoire.</div>
+                    </div>
+                    </div>
+                </div>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1"  value="option1">
+                <label class="custom-control-label" for="customCheck1" style= "font-style:justify; padding-right:5%;margin-top:-20px;margin-left: 4%; font-size:120%;font-weight: 400; font-family: bold,poppins; color: #2B2B68;">J'accepte que les informations saisies soient exploitées
+                  dans le cadre du formulaire de contact, avoir pris
+                  connaissance de la politique de protection des données
+                  personnelles et aussi pris connaissance les conditions
+                  générales de vente</label>
+              </div>
+              <div  class="form-group mt-4 pt-2">
+                <input   class="btn btn-primary btn-lg" type="submit"  value="Créer mon compte" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="assets\image\inscription.png" style="width: 29%;font-size:5%; margin-top: -50%; margin-left: 55%; position: absolute;">
+  </div>
+</section>
+

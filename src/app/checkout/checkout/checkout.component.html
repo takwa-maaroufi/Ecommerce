@@ -1,0 +1,137 @@
+<div class="container-fluid" style="background-color: whitesmoke;padding-top: 5%;margin-top: 3%;;padding-bottom: 5%;margin-bottom: 3%;">
+<div class="container-fuild" style=" margin-left:7%; margin-right:7%;padding-top: 5%;padding-bottom: 5%; margin-top: -2%;margin-bottom: -3%; background-color:white; max-width: max-content; border:1px solid white">
+  <p style=" margin-left: 1%; color: #FF5330; font-weight: 600; font-family:Arial, Helvetica, sans-serif; font-size: x-large;">Entrer vos données pour valider votre commande</p>
+ <div  class="container-fluid" >
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card"style="width :130%;   margin-top:5%;" >
+          <div class="card-body" style="border:1px solid #2B2B68 ; ">
+
+    <div class="row">
+
+      <div class=" col-md-6 mb-4">
+
+        <div class="form-group form-outline">
+          <input type="text" id="firstName" [(ngModel)]="firstName" placeholder="Nom *" class="form-control form-control-lg" />
+
+      </div>
+
+      </div>
+      <div class=" col-md-6 mb-4">
+        <div class="form-group form-outline">
+          <input type="text"  id="lastName" placeholder="Prénom *"[(ngModel)]="lastName"  class="form-control form-control-lg" />
+
+
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class=" col-md-6 mb-4 pb-2">
+
+        <div class="form-group form-outline mt-2 ">
+          <input  type="text" id="email" [(ngModel)]="email"  class="form-control form-control-lg" aria-describedby="emailHelp" placeholder="Email *" />
+
+        </div>
+
+      </div>
+
+
+      <div class=" col-md-6 mb-2 ">
+        <div class="form-group form-outline">
+          <input name="tel" [(ngModel)]="tel" type="text"placeholder="Téléphone *" id="tel" class="form-control form-control-lg" />
+
+        </div>
+        </div>
+
+
+
+    </div>
+    <div class="row">
+      <div  class=" col-md-6 mb-4">
+
+        <div class="form-group form-outline">
+          <input name="adress" type="text" id=" adress" [(ngModel)]="adress"  placeholder="Adresse *"class="form-control form-control-lg" />
+
+        </div>
+
+      </div>
+      <div  class=" col-md-6 mb-4">
+        <div class="form-group form-outline">
+          <input name="ville" type="text" id="ville" [(ngModel)]="ville" placeholder="Ville *" class="form-control form-control-lg" />
+
+
+        </div>
+        </div>
+      </div>
+
+    <div class="row">
+      <div  class=" col-md-6 mb-4">
+
+        <div class="form-group form-outline">
+          <select  id="gouvernorat"  name="gouvernorat" [(ngModel)]="gouvernorat" class="form-control form-select form-control-lg"style="width:100%; color: #2B2B68;">
+            <option value="1"  >Gouvernorat *</option>
+            <option *ngFor="let g of Gouvernorat"  >{{g.name}}</option>
+          </select>
+
+        </div>
+      </div>
+
+      </div>
+
+          </div>
+      </div>
+      </div>
+
+
+    <div class="col-sm-6" >
+      <div class="card" style="width: 70%;margin-left: 30%;margin-top: 5%; ">
+        <div class="card-body" style="border:1.5px solid #2B2B68 ;">
+          <div class="card-body" style=" margin-top:2px;border:1.5px solid #2B2B68 ;color: #2B2B68; font-family:Arial, Helvetica, sans-serif;">
+            <p>Sous-total:<span style="color: #FF5330;padding-left: 61%;">{{ cartTotalPrice}} TND</span> </p>
+            <p >Montant de Livraison:<span style="color: #FF5330;padding-left: 50%;">7 TND</span></p>
+            <hr>
+            <p>Total:<span style="color: #FF5330;padding-left: 71%;">{{ cartTotalPrice}} TND</span> </p>
+          </div>
+          <div class="card-body scrollbar "id="style-1" style="padding-top: -2px;" >
+            <ng-container  >
+            <div class="card-table  "*ngFor="let cart of cartObj" style="border: 2px #2B2B68; " >
+              <div class="cart-product"   >
+                    <table class="table table-responsive " >
+                        <tbody>
+                          <td ><img style=" position: absolute;margin-top: 0%;margin-bottom: 1% ;height :100px;width:70px;margin-left: 0px;"  class="card-img-top img-responsive"
+                            src="data:image/png;base64,{{cart.imageURL}}" alt="">
+                            <td style="padding-bottom: -2px;"><p style=" font-family:Arial, Helvetica, sans-serif;margin-left: 20%;font-size:18px; position: relative; color: #2B2B68; font-weight: 50; margin-top: 1%; ">{{cart.productName}} /*{{cart.qty}}</p>
+                              <p style=" font-family:Arial, Helvetica, sans-serif;position:relative;margin-left: 20%;font-size:19px; color: #FF5330; font-weight: 500; font-family: poppins,bold;margin-top: -2%; margin-bottom: -3px;">{{cart.price}} TND </p>
+                            </td>
+
+                        </tbody>
+                    </table>
+              </div>
+            </div>
+          </ng-container>
+          </div>
+          <div class="text-center" style="position: cenetr;">
+          <a style="margin-left:-2%;background-color: #FF5330;border-radius:0%;width: 63%;padding-top: 2%;padding-bottom: 2%;"class="btn btn-primary"href="/panier" > Retour au panier </a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <ng-container>
+
+    </ng-container>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox1"  value="option1">
+      <label class="custom-control-label" for="customCheck1" style= "font-style:justify; padding-right:5%;margin-top:-20px;margin-left: 4%; font-size:120%;font-weight: 400; font-family: bold,poppins; color: #2B2B68;">J'accepte que les informations saisies soient exploitées
+        dans le cadre du formulaire de contact, avoir pris
+        connaissance de la politique de protection des données
+        personnelles et aussi pris connaissance les conditions
+        générales de vente</label>
+    </div>
+    <div  class="form-group mt-4 pt-2">
+      <input (click)="checkoutCart()"  class="btn btn-primary btn-lg" type="submit"  value=" valider" />
+    </div>
+
+
+ </div>

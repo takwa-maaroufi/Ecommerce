@@ -1,0 +1,130 @@
+<script>
+
+  </script>
+<div class="container-fluid m" style="width: 1300px; margin-left:190px;">
+<p class="bare" style="color:#FF5330;">Accueil > {{categoryName}} <img style="width: 8%; margin-left: 73%; padding-top: 10px;" src="assets\image\ensemble.png"></p>
+<p class="cat" style="margin-top: -40px; font-weight: 600; font-size: xx-large;">SUCRE, FARINE ET AIDE À LA PÂTISSIÈRE</p>
+</div>
+<div class="card-top container-fluid">
+  <div class="container d-flex "style="margin-left:170px;">
+      <div class="item"style="margin-right:20px "  *ngFor="let sub of subCategoryList "
+      (click)="filter(sub.subcategoryName)">
+          <a  >
+            <img class="card-img-top img-responsive"
+            src="data:image/png;base64,{{sub.imageUrl}}"
+            style = "margin-bottom: 10%; height :100px;width:200px;margin-left: 0px; margin-top: 30px;"
+           alt="">
+          </a>
+          <h6>{{sub.subcategoryName}} </h6>
+
+  </div>
+
+  </div>
+  <hr style="width: 1140px; margin-top: -7%; margin-left: 15%;">
+</div >
+<div class="container-fluid" style="position: relative; padding-left: 50px;">
+<a (click)="toggleShow()" class="btn btn-primary bouton" style="font-family:poppins,bold; margin-bottom: 1px; "> <i class="bi bi-filter-left fa-xl" style="color: white;"></i>Filtrer par  </a>
+<div class="row" style="margin-top: -8%;">
+  <div class="column" >
+  <label class="dropdown" style="margin-top: 15%;">
+
+    <div class="dd-button"*ngIf="isShown"  >Marque    </div>
+     <div>
+       <input type="radio" class="dd-input priceSliders" id="test"  style="border: white;">
+    <ul class="dd-menu dropdown-content priceSliders" style="width:320px" >
+        <li style="height: 60px;">
+      <input type="text" class="input input_button main" [(ngModel)]="nomMarque" placeholder="Rechercher" >
+      <span class="searchicon"></span> </li>
+    <ul class="dd-menu scrollable-menu" style="width: 280px;padding-top: 2px; margin-left: 20px;box-shadow: none; border: white;">
+
+      <li *ngFor="let m of marqueList">
+       <label for="checkbox">
+          <input type="checkbox" class="checkbox-input"(change)="onChange($event)"  value={{m.marqueId}} id="checkbox" >
+
+           <span class="checkbox"></span>
+       </label>
+        <img class="card-img-top img-responsive"
+        src="data:image/png;base64,{{m.logo}}"
+        style = "height :50px;width:70px;margin-left: 50px; "
+       alt="">
+      </li>
+
+    </ul>
+    <li class="prop" style="position: relative;">
+
+      <button type="submit" class="btn_search input_button" style="border:none;height:40px; margin-left: 15px; width: 220px;background-color: #FF5330; color:white"
+        (click)="searchFilter()"  value="Valider">
+        Valider
+        </button>
+    </li>
+    </ul>
+
+  </div>
+  </label>
+</div>
+<div class="column">
+    <label class="dropdown" style="margin-top: 15%;">
+
+    <div class="dd-button " *ngIf="isShown"  > Price</div>
+    <input type="radio" class="dd-input" id="test"  style="border: white;">
+
+    <div class="priceSlider dd-menu dropdown-content">
+      <div class="custom-slider ">
+         <ngx-slider [(value)]="minValue"  [(highValue)]="maxValue"(mouseup)="filterProducts()" [options]="options" style="background-color: #2B2B68; border: 0.5px solid white;"></ngx-slider>
+      </div>
+    </div>
+    </label>
+  </div>
+<div class="column">
+  <label class="dropdown" style="margin-top: 15%;">
+
+  <div class="dd-button " *ngIf="isShown" ><span style="margin-left: -12%;"> En ce moment</span></div>
+  <input type="radio" class="dd-input" id="test"  style="border: white;">
+
+    <ul class="dd-menu dropdown-content priceSlider" >
+      <li style="color:#2B2B68"><label for="checkbox">
+        <input type="checkbox" class="checkbox-input" id="checkbox" >
+
+         <span class="checkbox" ></span>
+     </label> Livraison & Instalation</li>
+      <li style="color:#2B2B68"> <label for="checkbox">
+        <input type="checkbox" class="checkbox-input" id="checkbox" >
+
+         <span class="checkbox"></span>
+     </label> Nouveautés</li>
+    </ul>
+
+
+  </label>
+</div>
+
+</div>
+
+</div>
+<hr style="width: 1140px; margin-top: -2%; margin-left: 15%;">
+
+<div class="container" style="position: relative;">
+
+  <div class="row">
+
+   <!-- filterSouscategorie-->
+      <ng-container  *ngFor="let prod of filterSubCat  | filter:searchKey:'name' |paginate: { itemsPerPage: 5, currentPage: p }" >
+          <div   class="card col-md-3">
+            <a class="btn btn-primary" (click)="addtofave(prod)" style="border:#FF5330; background-color: #FF5330; height:32px; border-radius: 50%; margin-left: 87%;margin-top: 2%;color: #FF5330;"><i class="bi bi-heart fa-9xm" style="margin-left: -30%; margin-top:-40%;color:white"></i></a>
+        <img class="card-img-top img-responsive" (click)="onProductDetails(prod)"
+          src="data:image/png;base64,{{prod.imageURL}}"
+          style = "height :220px;width:150px;margin-left: 50px; "
+         alt="">
+
+              <hr style="position: absolute;margin-top: 90%; width: 85%; border: 0.5px solid; margin-left: 4%; color: grey;">
+              <p class="nom"  > <strong>{{prod.name}}</strong></p>
+           <tr>   <p style="margin-top: -3%; font-size: small;" >{{prod.nomMarque}} <span style="margin-left: 188px; color:#FF5330; font-weight: 600;"> {{prod.unite}}</span></p></tr>
+            <tr>  <p class="price" style="margin-top:9% ;" ><strong>{{prod.price}} TND</strong> </p></tr>
+              <button style= "margin-top: -14%; margin-left: 86%; width: 20%;border:#2B2B68; background-color:#2B2B68 ;border-radius: 0%; size: 2% ;padding:0%; width: 13% ;color: white ;" (click)="addCart(prod)"><i class="bi bi-cart3 fa-2xm	"></i></button>
+            </div>
+      </ng-container>
+
+  </div>
+  <pagination-controls ng-reflect-previous-label="page" ng-reflect-next-label="suivante" nextLabel="suivante" previousLabel="page" class="text-center mypagination" (pageChange)="p = $event" ></pagination-controls>
+
+</div>

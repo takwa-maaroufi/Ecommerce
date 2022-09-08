@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+
+<div class="container">
+<p class="L">Livraison gratuite à partir de 99 TND</p>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light  " style="padding:1px;position: relative; padding: auto;">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="margin-left:8%;" href="acceuil"><img src="assets\image\logo1.jpeg"></a>
+    <button class="navbar-toggler" type="button"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class=" navbar-collapse" id="navbarSupportedContent">
+    <div class="search" style="padding-left: 28%;">
+
+      <form  style="position: relative;" >
+        <i class="bi bi-square-fill fa-lg" style="border-right:white; position: absolute; color: white;background-color:white; margin-left:-8.5% ">
+          <button  style="position: absolute;margin-top: 2.5px; margin-left: -26.7%;border: 1px solid #FF5330; width: 22px; height: 1.5rem; background-color: #FF5330;"type="submit"> <i class="bi bi-list fa-xs" style="position: relative; color: white;margin-left:-8px; margin-top: -35%;position: absolute;"></i> </button>
+          <span class="vertical-line"></span>
+
+        </i>
+        <div class="form-group">
+          <!--[(ngModel)]="searchTerm"  -->
+        <input class="form-control form-input"(keyup)="search($event)" (click)="search($event)" style="border-left:white;border: 1px solid; border-color:#2B2B68; height: 2rem; width :29rem;" type="text"  >
+        <button  style=" margin-top:-28.5px;position:absolute;margin-left: 93.4%;border: #FF5330; border-radius: 0%; height: 1.5rem; width: 1.5rem;background-color: #FF5330;">
+          <i class="bi bi-search fa-xs"  style="position: absolute; color: white;margin-left:-19.4%; margin-top: -25% ;"></i>
+        </button>
+      </div>
+      </form>
+    </div>
+      <ul class="navbar-nav me-auto mb-2  mb-lg-0" style=" margin-left: 17%;">
+        <li class="nav-item">
+          <div class="dropdown">
+          <a class="btn btn-primary"  class="dropbtn nav-link active" aria-current="page" href="#">
+            <i class="bi bi-person fa-2xl"></i>
+          </a>
+          <div class="dropdown-content">
+            <a routerLink="/login" *ngIf="isLoggedIn()" (click)="logout()">Logout</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+        </li>
+        <li class="nav-item " >
+          <a  class="dropbtn nav-link active" routerLink="/faves" aria-current="page" href="#">
+            <i class="bi bi-heart fa-2xl"></i>
+          </a>
+        </li>
+        <li class="nav-item "  >
+          <a class="dropbtn nav-link active"  routerLink="/panier" style="background-color:  rgb(237, 237, 237); border:  rgb(237, 237, 237);">
+            <i class="bi bi-cart3 fa-2xl	"></i>
+            <div style="border-radius: 50%;margin-left: -0.6%; font-size: 8.5px; background-color: #FF5330;margin-top: -0.3%; position: absolute;" class="badge ">{{cart_qty}}</div>
+
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</body>
+</html>

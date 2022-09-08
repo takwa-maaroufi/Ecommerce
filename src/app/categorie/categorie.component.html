@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<p style=" margin-bottom: 2.5%;margin-top: 5%; margin-left: 10%;font-stretch: expanded; color: #2B2B68; font-family: poppins,bold; font-weight: 650; font-size: 200%;"> Catégories</p>
+<section class="categorie" >
+  <div claas="container-fluid" >
+
+    <div class="slider-wrap">
+      <div class="slider-main">
+        <div  *ngFor="let cat of categoryList"(click)="onCategoryDetails(cat)" class="item">
+          <img class="card-img-top img-responsive"
+          src="data:image/png;base64,{{cat.image}}"
+          style = "height :100px;width:110px;margin-left: 20px;margin-top:10% ">
+          <div class="text">{{cat.categoryName}}</div>
+        </div>
+
+      </div>
+         <div class="button-area">
+           <a class="btn" class="prev" appPrev><i class="bi bi-chevron-left fa-4x"></i></a>
+           <a class="btn" class="next" appNext><i class="bi bi-chevron-right fa-4x"></i></a>
+         </div>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>

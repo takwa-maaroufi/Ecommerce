@@ -1,0 +1,32 @@
+[
+  {
+    "id":1,
+    "nom":"EAUX FLORALES",
+    "image":"eaucat.png"
+  },
+  {
+   "id":2,
+   "nom":"FARINE ET AMIDON",
+   "image":"farinecat.png"
+  },
+  {
+   "id":3,
+   "nom":" SUCRE",
+   "image":"sucrecat.png"
+  },
+  {
+   "id":4,
+   "nom":"LAIT CONCENTRE SUCRE",
+   "image":"laitcat.png"
+ },
+ {
+   "id":5,
+   "nom":"LEVURE ET BICARBONATE",
+   "image":"leveurecat.png"
+ },
+ { "id":6,
+   "nom":"CHOCOLOAT MENAGER",
+   "image":"chocolatcat.png"
+ }
+
+ ]

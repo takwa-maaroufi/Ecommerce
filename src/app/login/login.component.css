@@ -1,0 +1,172 @@
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: whitesmoke;
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to bottom right,whitesmoke,whitesmoke);
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to bottom right, whitesmoke, whitesmoke);
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: .75em;
+  padding-right: .75em;
+
+}
+.card-registration .select-arrow {
+  top: 13px;
+}
+.card-registration{
+  margin-left: -34%;
+  width: 90%;
+  background-color: white;
+  margin-top: -22%;
+  border: white;
+}
+
+h3{
+  color: #FF5330;
+  font-family: poppins,bold;
+  font-weight: 700;
+}
+.btn{
+  background-color: #FF5330;
+ border-radius: 0%;
+  border: #FF5330;
+  margin-left: 27%;
+  padding-left: 10%;
+  padding-right: 10%;
+  box-shadow: #FF5330;
+  font-weight:450
+
+}
+.form-check-label{
+  font-size: 110%;
+}
+.form-check{
+  color: #2B2B68;
+  font-family: poppins,bold;
+  font-size: large;
+}
+.form-check-input{
+  border-radius: 0%;
+  border:2px solid #2B2B68;
+}
+.form-control{
+  border-radius: 0%;
+  border: 2px solid white;
+  border-bottom: 1px solid #2B2B68;
+}
+.select{
+  border-radius: 0%;
+  border: 2px solid white;
+  border-bottom: 1px solid #2B2B68;
+}
+option{
+  color: #2B2B68;
+}
+.custom-file{
+  border:1px solid white;
+  height:100%;
+  border-bottom:1px solid #2B2B68;
+}
+input[type="file"]{
+  display: none;
+}
+.custom-file label{
+  color:#2B2B68;
+justify-content: center;
+align-items: center;
+font-size: 130%;
+margin-top: 2.5%;
+margin-left: 6%;
+
+}
+::-webkit-input-placeholder{
+  color: #2B2B68;
+  margin-left: 100px;
+}
+#date{
+  background: none;
+  display: block;
+  border-bottom:1px solid #2B2B68;
+  margin: 0px auto;
+  padding:0px;
+  width: 310px;
+  outline: none;
+  color: #2B2B68;
+  border-radius: 0px;
+  text-align: center;
+}
+input[type="date"]{
+  display: none;
+}
+input::placeholder{
+  color: #2B2B68;
+  margin-left: 45%;
+}
+::-webkit-datetime-edit-fields-wrapper { background: white; }
+::-webkit-datetime-edit-text { color:#2B2B68; }
+::-webkit-datetime-edit-month-field { color: #2B2B68; }
+::-webkit-datetime-edit-day-field { color: #2B2B68; }
+::-webkit-datetime-edit-year-field { color: #2B2B68; }
+::-webkit-inner-spin-button { color:#2B2B68; }
+::-webkit-calendar-picker-indicator {color: #2B2B68;  }
+
+.form-control::hover {
+background-color: white;
+}
+form{
+  margin-bottom: 0%;
+}
+
+.card-registration{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-left: -42%;
+}
+.custom-control-label{
+  margin-left: 3%;
+}
+.custom-checkbox{
+  margin-top: 2%;
+  font-weight: 500;
+}
+
+.row{
+  padding-top:3%;
+}
+input[type="checkbox"]{
+-webkit-appearance:none;
+appearance: none;
+cursor: pointer;
+}
+
+input[type="checkbox"]:after{
+  box-shadow: #FF5330;
+color: #FF5330;
+}
+input[type="checkbox"]:checked{
+  background-color: #FF5330;
+}
+.form-control{
+  width: 200%;
+}
+
+.eye{
+  position:absolute;
+margin-top: -5%;
+margin-left: 78%;
+color: #2B2B68;
+}
+.eye-slash{
+  margin-top: -90%;
+}
+.hide {
+  display: none;
+}

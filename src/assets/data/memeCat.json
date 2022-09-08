@@ -1,0 +1,34 @@
+[
+  {
+    "id":1,
+    "nom":"Farine",
+    "souscategorie":"farine et amidon",
+    "prix":"10 ",
+    "marque":"warda",
+   "image":"https://www.warda.tn/sites/default/files/2019-10/farine-patissiere-flottant.png"},
+  {
+   "id":2,
+   "nom":"Chocolat",
+   "souscategorie":"chocolat manager",
+   "image":"https://upside.vteximg.com.br/arquivos/ids/160085-1000-1000/22103.png?v=637491119027930000",
+   "prix":"10 ",
+   "marque":"kikat"
+
+  },
+  {
+   "id":3,
+   "nom":"Sucre",
+   "souscategorie":"sucre",
+   "image":"https://www.tang-freres.fr/wp-content/uploads/produits/131305.png",
+   "prix":"10 ",
+   "marque":"Randa"
+  },
+  {
+   "id":4,
+   "nom":"Préparation gateau",
+   "souscategorie":"farine et amidon",
+   "image":"https://www.vanoiserie.tn/uploads/product/1571415753-83717120.png",
+   "prix":"10 ",
+   "marque":"Vanoise"
+ }
+]

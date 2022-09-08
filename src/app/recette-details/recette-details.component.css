@@ -1,0 +1,72 @@
+
+.list-user-item {
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #212529;
+    text-decoration: none;
+    background-color: #fff;
+    /* border-right: 1px solid rgba(0,0,0,.125); */
+    
+}
+.list-user-item p {
+    font-size: 11px;
+}
+.recipe-owner{
+    font-weight: bold;
+}
+.recipe-owner-bloc{
+    border-right: 1px solid rgba(0,0,0,.125);
+    width: 100%;
+}
+.recipe{
+    /* width: 90%; */
+    margin-left: 2%;
+}
+.recipe-details{
+    /* width: 20%; */
+    height: 560px;
+    width: 430px;
+    background-color: #E7FAFE;
+    border-radius: 5%;
+    margin-left: 10px;
+}
+.recipe-image,.cook-img{
+    border-radius: 4%;
+}
+.details-txt{
+    margin-left: 8%;
+    margin-right: 8%;
+    border-bottom: 1px solid rgba(0,0,0,.125); 
+}
+.recipe-info{
+    margin-left: 8%;
+}
+.desc-circle{
+    margin-right: 2%;
+}
+.desc-text{
+margin-left: 4%;
+}
+.description{
+    border-bottom: 1px solid rgba(0,0,0,.125);   
+}
+.autre-img{
+    min-width: 200px;
+    /* width: 60%; */
+}
+/* Devices under 768px (md) */
+@media (max-width: 768px) {
+    .autre-img{
+        min-width: 150px;
+    }
+}
+/* Devices under 576px (sm) */
+@media (max-width: 576px) {
+    .autre-img{
+        min-width: 150px;
+    }
+  
+}
+
+

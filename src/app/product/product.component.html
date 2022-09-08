@@ -1,0 +1,103 @@
+<div class="containe-fluid " style="margin-left: 9%;margin-top: 3%;">
+  <p class="bare" style="color:#FF5330; margin-bottom: -3%;">Accueil > {{produit.category.categoryName}} > {{produit.subCategory.subcategoryName}} > {{produit.name}}</p></div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+
+        <div class="card-body " style="margin-top: 10%;">
+          <div class="card-title" style="margin-top: -3%;" ><span><i class="bi bi-heart fa-xl	" style="color: #2B2B68; margin-left:95%; "></i>
+          </span></div>
+          <ng-container >
+<div class="column" style="margin-top: 2%;">
+  <img  class="card-img-top img-responsive" src="data:image/png;base64,{{produit.imageURL}}"
+  style = "height :80px;width:80px; margin-top: -5%; "
+ alt="" alt="">
+
+</div>
+
+<div class="column">
+
+  <img class="card-img-top img-responsive"  src="data:image/png;base64,{{produit.imageURL}}"
+  style = "height :80px;width:80px; margin-top: 4%;"
+ alt="" alt="">
+
+</div>
+                <img class="card-img-top img-responsive"  src="data:image/png;base64,{{produit.imageURL}}"
+                style = "height :400px;width:400px;margin-left: 25%;margin-top: -35%; "
+               alt="" alt="">
+
+        </ng-container>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card card2">
+        <div class="card-body" style="margin-top: -19px;">
+          <p class="marque" style="font-size:15px ;"><strong>{{produit.marque.nomMarque}}</strong> </p>
+
+            <p class="nom" style="font-size:20px ;"> <strong>{{produit.name}}</strong></p>
+            <p class="description" > {{produit.description}}</p>
+            <div class="card-text" style="margin-top: 2px; ">
+            <fieldset class="rating">
+              <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+              <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+              <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+              <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+              <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+              <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+              <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+              <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+              <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+              <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+          </fieldset>
+        </div>
+<div class="row" style="margin-top: 11%;">
+        <p><U  style="color:#2B2B68; margin-left:0%;margin-bottom: 5%;" ><span><span (click)="toggleShow()"> Voir le descriptif complet <i style="color:#2B2B68;" class="bi bi-plus"></i></span>
+           <td ><div class ="content"style=" ;margin-left: 49%; padding-top:1%; margin-top:-3%; position: absolute; background-color:whitesmoke;height:10% ;width:20%"  >
+          <button (click)="decrementQuantity()"style="border:none; margin-top:5% ;margin-left :20%; font-size:57% ;border: whitesmoke ; border-radius: 0%; background-color: whitesmoke;"><i class="bi bi-dash fa-2xl" style="color: #2B2B68; ;"></i></button>
+          <span style="color: #2B2B68;"> {{quantity}}
+         </span>
+          <button  (click)="incrementQuantity()"  style="border:none;margin-top:4% ;font-size: 57%; border-radius: 0%; border: whitesmoke ;background-color: whitesmoke;"><i class="bi bi-plus fa-2xl" style="color: #2B2B68;"></i></button>
+
+         </div></td></span></U></p>
+      </div>
+      <div class="row">
+      <div class="column"><p style="margin-top: 5%;margin-left: -5%;">  <strong >{{produit.price}} TND</strong></p></div><button class="btn btn-primary" value="" style="margin-top: -5%; margin-left:65% ;width: 40%; border-radius: 0%;border-color: #2B2B68; background-color: #2B2B68;" type="submit" (click)="addCart(produit)">Ajouter au panier </button>
+      </div>
+<div class="row" style="margin-top: 9%;">
+  <div class="column" style="margin-top:-4%;"><span><i style ="margin-top: 6%; margin-left: -6%; color: #2B2B68;"class="fa-solid fa-truck fa-2x"></i> <p style="font-size: 50%;margin-left: 5%;margin-top: -6.5%;font-size: small;">Livraison standard <br>Gratuite sous 3 à 6 jours ouvrés</p></span></div>
+ <div class="column" style="margin-left: 18%;margin-top:-7.5%;"><span> <i style =" color: #2B2B68; margin-left: 50%;margin-top: -30%; " class="fa-solid fa-truck-fast fa-2x"></i><p style="font-size: 50%;margin-left: 60% ;margin-top:-6.5%;font-size: small;">Express delivery<br> 10,00 TND available</p><span></span>
+ </span> </div>
+</div>
+    </div>
+      </div>
+    </div>
+    <div class="container" style="margin-top: 10%;">
+    <div class="card descriptioncard" *ngIf="isShown">
+      <div class="card-title"><h3>Description</h3></div>
+      <div class="card-body">
+      <p  style="margin-left:-3% ;">{{produit.details}}</p>
+    </div>
+    </div>
+  </div>
+    <!-- filterSouscategorie
+<div class="container">
+
+  <div class="row">
+
+
+       <ng-container  *ngFor="let prod of productList  " >
+           <div routerLink="/product" (click)="onProductDetails(prod)" class="card col-md-3">
+          <button  style="color:white;width:11%; margin-top:4%; margin-left:91%;font-size: x-small; border-radius:50%;border: #FF5330; background-color: #FF5330;" ><div style="margin-left:-5% ;margin-top:29%;"><i class="bi bi-heart fa-xl"></i></div></button>
+         <img class="card-img-top img-responsive"
+           src="data:image/png;base64,{{prod.imageURL}}"
+           style = "height :220px;width:150px;margin-left: 50px; "
+          alt="">
+           </div>
+       </ng-container>
+</div>
+-->

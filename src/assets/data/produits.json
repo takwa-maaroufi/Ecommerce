@@ -1,0 +1,67 @@
+[
+  {
+    "id":1,
+    "nom":"Farine",
+    "souscategorie":"farine et amidon",
+    "prix":"10 ",
+    "quantite":1,
+    "marque":"warda",
+   "image":"https://www.warda.tn/sites/default/files/2019-10/farine-patissiere-flottant.png"},
+  {
+   "id":2,
+   "nom":"Chocolat",
+   "souscategorie":"chocolat manager",
+   "quantite":1,
+   "image":"https://upside.vteximg.com.br/arquivos/ids/160085-1000-1000/22103.png?v=637491119027930000",
+   "prix":"10 ",
+   "marque":"kikat"
+
+  },
+  {
+   "id":3,
+   "nom":"Sucre",
+   "souscategorie":"sucre",
+   "quantite":1,
+   "image":"https://www.tang-freres.fr/wp-content/uploads/produits/131305.png",
+   "prix":"10 ",
+   "marque":"Randa"
+  },
+  {
+   "id":4,
+   "nom":"Préparation gateau",
+   "souscategorie":"farine et amidon",
+   "quantite":1,
+   "image":"https://www.vanoiserie.tn/uploads/product/1571415753-83717120.png",
+   "prix":"10 ",
+   "marque":"Vanoise"
+ },
+ {
+   "id":5,
+   "nom":"Eau Floral",
+   "souscategorie":"eaux florales",
+   "quantite":1,
+   "image":"https://media.cosmebio.org/adherents/676/produit-12622-hydrolat-rose-de-damas-pur_12Q3rPy.png.400x400_q85_background-%23ffffff.png",
+   "prix":"10 ",
+   "marque":"warda"
+
+ },
+ {
+  "id":6,
+  "nom":"Levure chimique",
+  "souscategorie":"levure et bicarbonate",
+  "quantite":1,
+   "image":"https://vanoiserie.tn/uploads/product/1571414012-19120183.png",
+   "marque":"Vanoise"
+
+ },
+ {
+  "id":7,
+  "nom":"lait concentre",
+  "souscategorie":"lait concentre sucre",
+  "quantite":1,
+   "image":"https://www.elaoula.com/wp-content/uploads/2021/08/lait-concentre.png",
+   "marque":"Neslé"
+
+ }
+
+ ]

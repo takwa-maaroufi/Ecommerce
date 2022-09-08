@@ -1,0 +1,89 @@
+
+
+
+
+<div class="container-fluid "style="background-color:whitesmoke; padding-top:3%; margin-top:5%;padding-bottom :3px;margin-bottom:5%">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card " style="padding-bottom: 20px; padding-top:0%; width: 400px;margin-left: 150px; background-color: white;">
+        <div class="sidebar">
+          <a href="#" class="active " id="primary" ><i  class="bi bi-person fa bi1"></i> Votre compte 360 tn</a>
+          <a href="historique" id="primary"  autocomplete="off"><i class="bi bi-box-arrow-in-down bi1"></i> Historique de commandes</a>
+          <a href="faves"  id="primary" autocomplete="off"><i class="bi bi-heart bi1"></i> Produits préférés</a>
+          <a href="#"  id="primary" autocomplete="off"><i class="bi bi-chat-dots bi1"></i> Communication préférence</a>
+          <a href="#"  id="primary" ><i class="bi bi-gift bi1"></i> Vos crédit 360 tn</a>
+
+        </div>
+        <input
+            class="btn btn-primary btn-lg deco" type="submit" value="Déconnexion" />
+      </div>
+    </div>
+    <div class="col-sm-6 ">
+      <div class="container-fluid   " style="background-color: white;  margin-left:-30.1% ;   width: 115%;
+      height: fit-content;
+      border: 2px solid #2B2B68;
+      border-radius: 0%;
+      padding-bottom: 2px;
+
+      ">
+        <div class="card-body  ">
+          <h2 class="card-title" style="padding-top: 3%;padding-bottom: 3%;">Historique des commandes</h2>
+          <div class="hr1"></div>
+
+
+  <ng-container >
+    <div class="row">
+      <div class="col-sm-6">
+                  <div class="cart-product" *ngFor="let cmd of commandes">
+                        <table class="table table-responsive">
+                            <tbody>
+                                  <tr >
+
+                                <div class="card-tile" style="margin-top:2%; margin-left: 0%"><span style="color: #2B2B68; ;margin-bottom: 0%;"  > Numéro de commande: {{cmd.orderId}}<br> Date de commande: {{cmd.order_date}}
+                                  <span><br>Total: {{cmd.price}} TND <br ><p style="color:#FF5330; font-weight: 600;margin-left: 0%;">Commande {{cmd.statut}} <button  (click)="toggleShow()"  class="btn btn-primary " style="background-color: #2B2B68; border-radius:0%; border: #2B2B68; margin-left: 72%;" ><i class="bi bi-plus fa-2xl" ></i>
+                                  </button >
+                                </p></span>
+                                </span>
+                               </div>
+
+                                </tr>
+                                <div *ngIf="isShown" class="card-body scrollbar " id="style-1" style="padding-top: -2px; " >
+                                  <ng-container  >
+                                  <div class="card-table "   style="border: 2px #2B2B68;background-color: white; " *ngFor="let pro of commandes" >
+                                    <div class="cart-products" >
+                                          <table class="table table-responsive " >
+                                              <tbody>
+                                            <td ><img style=" position: absolute;margin-top: 0%;margin-bottom: 1% ;height :100px;width:70px;margin-left: 0px;margin-top: -6px;"  class="card-img-top img-responsive"
+                                                  src="data:image/png;base64,{{pro.product.imageURL}}" alt="">
+                                                  <td style="padding-bottom: -2px;margin-left: -50px;"><p style=" font-family:Arial, Helvetica, sans-serif;margin-left: 11%;font-size:18px; position: relative; color: #2B2B68; font-weight: 50; margin-top: 1%; ">{{pro.product.name}} /*{{pro.qty}}</p>
+                                                    <p style=" font-family:Arial, Helvetica, sans-serif;position:relative;margin-left: 11%;font-size:19px; color: #FF5330; font-weight: 500; font-family: poppins,bold;margin-top: -2%; margin-bottom: -3px;">{{pro.product.price}} TND </p>
+                                                  </td>
+
+                                              </tbody>
+                                          </table>
+                                    </div>
+                                  </div>
+
+                                </ng-container>
+                              </div>
+
+                              </tbody>
+
+                        </table>
+
+                        </div>
+
+
+
+               </div>
+
+
+      </div>
+
+
+
+  </ng-container>
+        </div>
+  </div>
+  </div>
+

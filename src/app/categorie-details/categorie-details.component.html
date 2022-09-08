@@ -1,0 +1,20 @@
+
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+      <div class="btn item"style="margin-right:20px"  *ngFor="let sub of subCategoryList " (click)="onSubCategoryList(sub)"  >
+          <a  >
+            <img class="card-img-top img-responsive"
+            src="data:image/png;base64,{{sub.imageUrl}}"
+            style = "margin-bottom: 10%; height :100px;width:200px;margin-left: 0px; margin-top: 30px;"
+           alt="">
+          </a>
+          <h6>{{sub.subcategoryName}} </h6>
+
+      </div>
+
+  </div>
+  <hr style="width: 1160px; margin-top: -7%; margin-left: 11%;">
+</div>
+<a href="/product" class="btn btn-primary bouton" style="font-family:poppins,bold; "> <i class="bi bi-filter-left fa-xl" style="color: white;"></i>Filtrer par  </a>
+
+<hr style="width: 1160px; margin-top: 10%; margin-left: 12%;">
