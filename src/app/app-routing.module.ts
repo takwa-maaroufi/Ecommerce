@@ -41,7 +41,7 @@ const routes : Routes =[
   {path:"wait",component:WaitRegistrationComponent, canActivate:[AuthGuard], data:{roles:['USER']} },
   {path:"product/:id",component:ProductComponent, canActivate:[AuthGuard], data:{roles:['USER']}  },
   {path:"deals",component:DealsComponent},
-  {path:"recetteDetails",component:RecetteDetailsComponent},
+  {path:"recetteDetails/:id",component:RecetteDetailsComponent},
   {path:"recetteHome",component:RecetteHomeComponent},
   {path:"addToWishlist",component:FaveProductComponent},
   { path: 'checkout', component: CheckoutComponent },

@@ -50,6 +50,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { PaginationComponent } from './pagination/pagination.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ProDdeCommandeComponent } from './pro-dde-commande/pro-dde-commande.component'
+import { RecetteService } from './service/recette.service';
+import { RecetteDetailsComponent } from './recette-details/recette-details.component';
+import { RecetteHomeComponent } from './recette-home/recette-home.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +88,8 @@ import { ProDdeCommandeComponent } from './pro-dde-commande/pro-dde-commande.com
     SubCatComponent,
     PaginationComponent,
     ProDdeCommandeComponent,
-
+    RecetteDetailsComponent,
+    RecetteHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -105,7 +109,7 @@ import { ProDdeCommandeComponent } from './pro-dde-commande/pro-dde-commande.com
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
-  }, UserService, CategorieServiceService, CartserviceService, AuthentificationService, PanierService, CheckoutService, SubcategoryService],
+  }, RecetteService, UserService, CategorieServiceService, CartserviceService, AuthentificationService, PanierService, CheckoutService, SubcategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

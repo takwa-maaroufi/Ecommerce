@@ -95,9 +95,9 @@ export class RecetteService {
   //   return this.http.request(req);
   // }
 
-  // getData(id: string): Observable<Object> {
-  //   return this.http.get(`${this.baseUrl}${id}`);
-  // }
+  getData(id: string): Observable<Object> {
+    return this.http.get(`${this.baseUrl}${id}`);
+  }
 
   // deleteData(id: string): Observable<any> {
   //   return this.http.delete(`${this.baseUrl}delete/${id}`, {
