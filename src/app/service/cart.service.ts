@@ -28,13 +28,12 @@ this.getOrdersByUser();
 
    getCartDetailsByUser(){
      this.http.postRequestWithToken("api/addtocart/getCartsByUserId",{}).subscribe((data:any)=>{
-      //alert("Error while fetching the cart Details");
       this.cartObj = data;
       this.cartQty = data.length;
      this.cartTotalPrice = this.getTotalAmounOfTheCart();
       this.cartServiceEvent.next({"status":"completed"})//emitter
      },error=>{
-       alert("Error while fetching the cart Details");
+       // alert("Error while fetching the cart Details");
      })
    }
 
@@ -102,7 +101,7 @@ this.getOrdersByUser();
       this.http.postRequestWithToken("api/addtocart/removeProductFromCart",request).subscribe((data:any)=>{
           this.getCartDetailsByUser();
       },error=>{
-        alert("Error while fetching the cart Details");
+        // alert("Error while fetching the cart Details");
       })
   }
 
@@ -123,22 +122,20 @@ getByOrderId(orderId:string): Observable<any[]> {
 
 getOrdersByUser(){
   this.http.postRequestWithToken("api/order/getOrdersByUserId",{}).subscribe((data:any)=>{
-   //alert("Error while fetching the cart Details");
    this.commandes = data;
    this.CmdServiceEvent.next({"status":"completed"})//emitter
   },error=>{
-    alert("Error while fetching the cart Details");
+    // alert("Error while fetching the cart Details");
   })
 }
 
 
 getOrdersByordr(){
   this.http.postRequestWithToken("api/order/getOrdersByUserId",{}).subscribe((data:any)=>{
-   //alert("Error while fetching the cart Details");
    this.commandes = data;
    this.CmdServiceEvent.next({"status":"completed"})//emitter
   },error=>{
-    alert("Error while fetching the cart Details");
+    // alert("Error while fetching the cart Details");
   })
 }
 

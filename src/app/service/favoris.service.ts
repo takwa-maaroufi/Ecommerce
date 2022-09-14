@@ -22,12 +22,11 @@ export class FavorisService {
 
    getCartDetailsByUser(){
     this.http.postRequestWithToken("api/wishlist/getCartsByUserId",{}).subscribe((data:any)=>{
-     //alert("Error while fetching the cart Details");
      this.cartwish = data;
      this.FavoriServiceEvent.next({"status":"completed"})//emitter
 
     },error=>{
-      alert("Error while fetching the cart Details");
+      // alert("Error while fetching the cart Details");
     })
   }
 
@@ -65,7 +64,7 @@ export class FavorisService {
     this.http.postRequestWithToken("api/wishlist/removeProductFromCart",request).subscribe((data:any)=>{
         this.getCartDetailsByUser();
     },error=>{
-      alert("Error while fetching the cart Details");
+      // alert("Error while fetching the cart Details");
     })
 }
 

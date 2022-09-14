@@ -46,7 +46,7 @@ export class PanierComponent implements OnInit {
       this.http.postRequestWithToken("api/addtocart/updateQtyForCart",request).subscribe((data:any)=>{
         this.cartService.getCartDetailsByUser();//for updating in the application..
       },error=>{
-        alert("Error while fetching the cart Details");
+        // alert("Error while fetching the cart Details");
       })
 
 
@@ -70,7 +70,7 @@ export class PanierComponent implements OnInit {
       this.http.postRequestWithToken("api/addtocart/updateQtyForCart",request).subscribe((data:any)=>{
         this.cartService.getCartDetailsByUser();//for updating in the application..
       },error=>{
-        alert("Error while fetching the cart Details");
+        // alert("Error while fetching the cart Details");
       })
 
 if(qty=1){
@@ -85,7 +85,7 @@ if(qty=1){
       this.cartObj = data;
       this.cartTotalPrice = this.getTotalAmounOfTheCart();
     },error=>{
-      alert("Error while fetching the cart Details");
+      // alert("Error while fetching the cart Details");
     })
   }
 getCartQty(){
@@ -134,7 +134,7 @@ getCartQty(){
         this.cartService.getCartDetailsByUser();
         this.router.navigate(['']);
      },error=>{
-        alert("Error while fetching the cart Details");
+        // alert("Error while fetching the cart Details");
       })
 
     }else{

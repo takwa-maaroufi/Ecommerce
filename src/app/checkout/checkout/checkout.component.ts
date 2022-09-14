@@ -83,7 +83,7 @@ qty=1;
         this.cartObj = data;
         this.cartTotalPrice = this.getTotalAmounOfTheCart();
       },error=>{
-        alert("Error while fetching the cart Details");
+        // alert("Error while fetching the cart Details");
       })
     }
  increment(){
@@ -127,7 +127,7 @@ qty=1;
           this.cartService.getCartDetailsByUser();
           this.router.navigate(['']);
        },error=>{
-          alert("Error while fetching the cart Details");
+          // alert("Error while fetching the cart Details");
         })
 
       }else{

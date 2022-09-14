@@ -30,7 +30,7 @@ export class FaveProductComponent implements OnInit {
       this.http.postRequestWithToken("api/wishlist/getCartsByUserId",{}).subscribe((data:any)=>{
         this.WishItems = data;
       },error=>{
-        alert("Error while fetching the cart Details");
+        // alert("Error while fetching the cart Details");
       })
     }
 

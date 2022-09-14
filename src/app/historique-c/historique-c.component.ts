@@ -39,7 +39,7 @@ getOrdersByUser(){
   this.http.postRequestWithToken("api/order/getOrdersByUserId",{}).subscribe((data:any)=>{
     this.commandes = data;
   },error=>{
-    alert("Error while fetching the cart Details");
+    // alert("Error while fetching the cart Details");
   })
 }
 
