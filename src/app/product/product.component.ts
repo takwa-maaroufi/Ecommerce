@@ -17,7 +17,7 @@ import { UserService } from '../service/user.service';
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private productService:ProductService,private cartSevice:CartService,  private actRoute: ActivatedRoute,private api : ApiService, private caddyService: PanierService, private router: Router,private authService:AuthentificationService, private userService:UserService) { }
+  constructor(private productService:ProductService,private cartSevice:CartService,  private actRoute: ActivatedRoute,private api : ApiService, private caddyService: PanierService, private router: Router,private authService:AuthentificationService, private userService:UserService, private auth : AuthentificationService) { }
   public productList :any ;
   public filterSouscategorie : any;
   searchKey:string ="";
@@ -31,7 +31,7 @@ produit : any
 categoryNames:any
 
   ngOnInit(): void {
-    this.userService.forUser();
+    // this.userService.forUser();
     this. productID = this.actRoute.snapshot.params['id'];
     this.getData(this.productID);
   }
@@ -63,16 +63,21 @@ categoryNames:any
 
 
 addCart(cartProductObj:any){
-  var cartObj = {
-    "productId":cartProductObj.id,
-    "qty":this.quantity,
-    "price":cartProductObj.price*this.quantity,
-    "productName":cartProductObj.name,
-    "imageURL":cartProductObj.imageURL
+  if (this.isLoggedIn()){
+    var cartObj = {
+      "productId":cartProductObj.id,
+      "qty":this.quantity,
+      "price":cartProductObj.price*this.quantity,
+      "productName":cartProductObj.name,
+      "imageURL":cartProductObj.imageURL
+    }
+    this.cartSevice.addCart(cartObj);
+  } else {
+    this.router.navigate(['/login']);
   }
-  this.cartSevice.addCart(cartObj);
-  console.log(cartObj);
-
+}
+public isLoggedIn(){
+  return this.auth.isLoggedIn();
 }
 }
 

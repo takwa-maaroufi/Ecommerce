@@ -45,4 +45,8 @@ public logout(){
   this.auth.clear();
   this.router.navigate(['/login']);
 }
+public login(){
+  this.auth.clear();
+  this.router.navigate(['/login']);
+}
 }

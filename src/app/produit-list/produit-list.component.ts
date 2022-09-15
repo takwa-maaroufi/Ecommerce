@@ -99,7 +99,7 @@ toggleShow() {
       this.listProducts();
     });*/
 
-    this.userService.forUser();
+    // this.userService.forUser();
     this.marqueService.getAll()
     .subscribe(res=>{
       this.marqueList = res;
@@ -107,6 +107,7 @@ toggleShow() {
 
 
      }) });
+     this.subcategoryName = this.actRoute.snapshot.params['subcategoryName'];
      this.categoryName = this.actRoute.snapshot.params['categoryName'];
     this.subCategoryService.getSubategorytByCat(this.categoryName)
     .subscribe(res=>{

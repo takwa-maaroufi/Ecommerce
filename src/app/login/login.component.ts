@@ -26,22 +26,11 @@ export class LoginComponent implements OnInit {
         this.auth.setRoles(response.user.role);
         this.auth.setToken(response.jwtToken);
         this.auth.setEmail(response.user.email);
-
         const role = response.user.role[0].roleName;
-        if (role === 'ADMIN') {
-          this.router.navigate(['/admin']);
-
-        } else {
           this.router.navigate(['/acceuil']);
           console.log(response.jwtToken);
           console.log(response.email);
-        }
-      },
-      (error) => {
-        console.log(error);
       }
     );
   }
 }
-
-

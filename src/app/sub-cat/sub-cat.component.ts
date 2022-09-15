@@ -49,7 +49,7 @@ nomMarque:any
        this.listProducts();
      });*/
 
-     this.userService.forUser();
+    //  this.userService.forUser();
      this.marqueService.getAll()
      .subscribe(res=>{
       this.marquelist = res;

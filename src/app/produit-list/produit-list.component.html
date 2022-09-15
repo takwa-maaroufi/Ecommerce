@@ -3,10 +3,10 @@
   </script>
 <div class="container-fluid m" style="width: 1300px; margin-left:190px;">
 <p class="bare" style="color:#FF5330;">Accueil > {{categoryName}} <img style="width: 8%; margin-left: 73%; padding-top: 10px;" src="assets\image\ensemble.png"></p>
-<p class="cat" style="margin-top: -40px; font-weight: 600; font-size: xx-large;">SUCRE, FARINE ET AIDE À LA PÂTISSIÈRE</p>
+<p class="cat" style="margin-top: -40px; font-weight: 600; font-size: xx-large;">{{categoryName}}</p>
 </div>
 <div class="card-top container-fluid">
-  <div class="container d-flex "style="margin-left:170px;">
+  <div class="container d-flex "style="margin-left:230px;">
       <div class="item"style="margin-right:20px "  *ngFor="let sub of subCategoryList "
       (click)="filter(sub.subcategoryName)">
           <a  >

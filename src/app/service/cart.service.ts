@@ -52,7 +52,7 @@ this.getOrdersByUser();
     },
     error=>{
       //if the products is already in cart
-        alert("Error in AddCart API "+error.message);
+        // alert("Error in AddCart API "+error.message);
     })
   }
   addCartWish(obj:any){
@@ -69,7 +69,7 @@ this.getOrdersByUser();
     },
     error=>{
       //if the products is already in cart
-        alert("Error in AddCart API "+error.message);
+        // alert("Error in AddCart API "+error.message);
     })
   }
   getCartOBj(){

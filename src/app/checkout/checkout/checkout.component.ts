@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HttpServiceService } from 'src/app/http-service.service';
 import { Cart } from 'src/app/models/Caddy.model';
 import { Order } from 'src/app/models/order';
 import { OrderItem } from 'src/app/models/orderItem';
@@ -9,6 +8,8 @@ import { Produit } from 'src/app/models/produit.model';
 import { Purchase } from 'src/app/models/purchase';
 import { User } from 'src/app/models/user';
 import { AuthentificationService } from 'src/app/service/authentification.service';
+import { HttpServiceService } from 'src/app/http-service.service';
+
 import { CartService } from 'src/app/service/cart.service';
 import { CheckoutService } from 'src/app/service/Checkout.service';
 import { PanierService } from 'src/app/service/panier.service';
@@ -42,11 +43,11 @@ export class CheckoutComponent implements OnInit {
   checkoutForm!: FormGroup;
 qty=1;
   file!:File;
-    constructor(private formBuilder: FormBuilder,private router:Router,private cartService:CartService,private http:HttpServiceService) { }
+    constructor(private userService:UserService, private router:Router,private cartService:CartService,private http:HttpServiceService) { }
 
   ngOnInit() {
     //below function will be triggerd from when removing and qty  is changing..
-
+    this.forUser();
     this.cartService.cartServiceEvent.subscribe(data=>{
       this.cartObj =  this.cartService.getCartOBj();
       this.cartTotalPrice  = this.cartService.cartTotalPrice;
@@ -66,7 +67,16 @@ qty=1;
       console.log(file.files[0]);
       this.file = file.files[0];
     }
-
+    forUser() {
+      this.userService.forUser().subscribe(
+        (response) => {
+          console.log(response);
+        },
+        (error)=>{
+          console.log(error);
+        }
+      );
+    }
     getTotalAmounOfTheCart(){
       let obj = this.cartObj;
       let totalPrice  = 0;
@@ -82,8 +92,6 @@ qty=1;
       this.http.postRequestWithToken("api/addtocart/getCartsByUserId",{}).subscribe((data:any)=>{
         this.cartObj = data;
         this.cartTotalPrice = this.getTotalAmounOfTheCart();
-      },error=>{
-        // alert("Error while fetching the cart Details");
       })
     }
  increment(){
@@ -125,10 +133,8 @@ qty=1;
         this.http.postRequestWithToken("api/order/checkout_order",request).subscribe((data:any)=>{
           alert("checkout process completed.Your Order is processed..");
           this.cartService.getCartDetailsByUser();
-          this.router.navigate(['']);
-       },error=>{
-          // alert("Error while fetching the cart Details");
-        })
+          this.router.navigate(['SuivieCheckout']);
+       })
 
       }else{
           alert("Payment Integration is not yet completed.")
@@ -136,4 +142,3 @@ qty=1;
     }
 
 }
-

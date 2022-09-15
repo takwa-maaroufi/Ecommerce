@@ -13,7 +13,7 @@
 </div>
 <nav class="navbar navbar-expand-lg navbar-light  " style="padding:1px;position: relative; padding: auto;">
   <div class="container-fluid">
-    <a class="navbar-brand" style="margin-left:8%;" href="acceuil"><img src="assets\image\logo1.jpeg"></a>
+    <a class="navbar-brand" style="margin-left:8%;" href="/acceuil"><img src="assets\image\logo1.jpeg"></a>
     <button class="navbar-toggler" type="button"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -38,11 +38,12 @@
       <ul class="navbar-nav me-auto mb-2  mb-lg-0" style=" margin-left: 17%;">
         <li class="nav-item">
           <div class="dropdown">
-          <a class="btn btn-primary"  class="dropbtn nav-link active" aria-current="page" href="#">
+          <a class="btn btn-primary"  class="dropbtn nav-link active" aria-current="page" >
             <i class="bi bi-person fa-2xl"></i>
           </a>
           <div class="dropdown-content">
-            <a routerLink="/login" *ngIf="isLoggedIn()" (click)="logout()">Logout</a>
+            <a routerLink="/login" *ngIf="isLoggedIn()" (click)="logout()">Déconnexion</a>
+            <a routerLink="/login" *ngIf="!isLoggedIn()" (click)="login()" href="#">se Connecter</a>
           </div>
         </div>
         </li>
@@ -51,8 +52,9 @@
             <i class="bi bi-heart fa-2xl"></i>
           </a>
         </li>
-        <li class="nav-item "  >
-          <a class="dropbtn nav-link active"  routerLink="/panier" style="background-color:  rgb(237, 237, 237); border:  rgb(237, 237, 237);">
+
+        <li   class="nav-item "  >
+          <a   class="dropbtn nav-link active "  routerLink="/panier" style="background-color:  rgb(237, 237, 237); border:  rgb(237, 237, 237);">
             <i class="bi bi-cart3 fa-2xl	"></i>
             <div style="border-radius: 50%;margin-left: -0.6%; font-size: 8.5px; background-color: #FF5330;margin-top: -0.3%; position: absolute;" class="badge ">{{cart_qty}}</div>
 
@@ -62,5 +64,29 @@
     </div>
   </div>
 </nav>
+<!-- Modal -->
+<div class="form-popup" id="myForm">
+  <form class="form-container">
+    <h1>Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+<script>
+  function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
+  </script>
 </body>
 </html>

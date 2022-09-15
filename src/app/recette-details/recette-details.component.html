@@ -7,13 +7,13 @@
         </div>
         <div class="row ">
             <div class="col-lg-8 col-sm-12 mt-5">
-                <img src="data:image/png;base64,{{recette.imageRecette}}" class="recipe-image img-fluid" width="840px" height="500px ">
+                <img style="max-width: 70%; margin-left: 15%;" src="data:image/png;base64,{{recette.imageRecette}}" class="recipe-image img-fluid" width="840px" height="500px ">
             </div>
             <div class="col-lg-4 col-sm-12 recipe-details mt-5">
                 <h3 class="mt-4 text-center ">Liste des ingredients</h3>
                     <div class=" d-flex gap-5 details-txt " *ngFor="let product of products">
                         <a href="/product/{{product.id}}" target="_blank">
-                            {{product.name}}
+                            <h2>{{product.name}}</h2>
                         </a>
                     </div>
                     <!-- <div class=" d-flex gap-5  details-txt " >
@@ -48,7 +48,7 @@
                     <div class="description">
                         {{recette.description}}
                     </div>
-                    <img class="cook-img mt-3 desc-text img-fluid" src="../../assets/image/cook-2.jpg" width="90%" height="400px">
+                    <img style="margin-left: 20%;" class="cook-img mt-3 desc-text img-fluid" src="../../assets/image/cook-2.jpg" width="60%">
                 </div>
                 <div class="col-lg-4 col-sm-12  ">
                     <h3>Autre</h3>
@@ -64,9 +64,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mt-5" >
+                    <!-- <div class="mt-5" >
                         <img src="../../assets/image/Ads.png" width="100%" height="400px"/>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

@@ -40,7 +40,7 @@
           <p class="marque" style="font-size:15px ;"><strong>{{produit.marque.nomMarque}}</strong> </p>
 
             <p class="nom" style="font-size:20px ;"> <strong>{{produit.name}}</strong></p>
-            <p class="description" > {{produit.description}}</p>
+            <!-- <p class="description" > {{produit.description}}</p> -->
             <div class="card-text" style="margin-top: 2px; ">
             <fieldset class="rating">
               <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
@@ -80,7 +80,7 @@
     <div class="card descriptioncard" *ngIf="isShown">
       <div class="card-title"><h3>Description</h3></div>
       <div class="card-body">
-      <p  style="margin-left:-3% ;">{{produit.details}}</p>
+      <p  style="margin-left:-3% ;">{{produit.description}}</p>
     </div>
     </div>
   </div>

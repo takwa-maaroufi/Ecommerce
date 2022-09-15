@@ -6,6 +6,7 @@ import { Produit } from '../models/produit.model';
 import { CartService } from '../service/cart.service';
 import { FavorisService } from '../service/favoris.service';
 import { PanierService } from '../service/panier.service';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-fave-product',
@@ -15,9 +16,10 @@ import { PanierService } from '../service/panier.service';
 export class FaveProductComponent implements OnInit {
    WishItems:any
    product!:Produit
-  constructor( private favorisService: FavorisService, private cartSevice :CartService ,private router:Router,private http:HttpServiceService) { }
+  constructor(private userService:UserService, private favorisService: FavorisService, private cartSevice :CartService ,private router:Router,private http:HttpServiceService) { }
 
   ngOnInit() {
+    this.forUser();
      this.getCartDetailsByUser();
     //below function will be triggerd from when removing and qty  is changing..
     this.favorisService.FavoriServiceEvent.subscribe(data=>{
@@ -25,12 +27,19 @@ export class FaveProductComponent implements OnInit {
 
     });}
 
-
+    forUser() {
+      this.userService.forUser().subscribe(
+        (response) => {
+          console.log(response);
+        },
+        (error)=>{
+          console.log(error);
+        }
+      );
+    }
     getCartDetailsByUser(){
       this.http.postRequestWithToken("api/wishlist/getCartsByUserId",{}).subscribe((data:any)=>{
         this.WishItems = data;
-      },error=>{
-        // alert("Error while fetching the cart Details");
       })
     }
 

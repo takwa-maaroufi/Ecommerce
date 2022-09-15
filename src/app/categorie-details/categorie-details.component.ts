@@ -66,7 +66,7 @@ produit : any
    /** this.route.paramMap.subscribe(() => {
       this.listProducts();
     });*/
-    this.userService.forUser();
+    // this.userService.forUser();
     this.subcategoryName = this.actRoute.snapshot.params['subcategoryName'];
     this.subCategoryService.getSubategorytBySubCatt(this.subcategoryName)
     .subscribe(res=>{
@@ -93,16 +93,16 @@ onProductDetails(p: Produit) {
 onSubCategoryList(S: Souscategory) {
   this.router.navigateByUrl("/productSubcategory/"+S.subcategoryName);
 }
-forUser() {
-  this.userService.forUser().subscribe(
-    (response) => {
-      console.log(response);
-    },
-    (error)=>{
-      console.log(error);
-    }
-  );
-}
+// forUser() {
+//   this.userService.forUser().subscribe(
+//     (response) => {
+//       console.log(response);
+//     },
+//     (error)=>{
+//       console.log(error);
+//     }
+//   );
+// }
 
 
 }

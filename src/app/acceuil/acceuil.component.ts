@@ -11,17 +11,17 @@ message: any;
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.forUser();
-  }
-  forUser() {
-    this.userService.forUser().subscribe(
-      (response) => {
-        console.log(response);
-        this.message = response;
-      },
-      (error)=>{
-        console.log(error);
-      }
-    );
+  //   this.forUser();
+  // }
+  // forUser() {
+  //   this.userService.forUser().subscribe(
+  //     (response) => {
+  //       console.log(response);
+  //       this.message = response;
+  //     },
+  //     (error)=>{
+  //       console.log(error);
+  //     }
+  //   );
   }
 }

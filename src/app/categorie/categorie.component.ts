@@ -18,7 +18,7 @@ categoryList:any
     /** this.route.paramMap.subscribe(() => {
        this.listProducts();
      });*/
-     this.userService.forUser();
+    //  this.userService.forUser();
 this.getData();
     this.categorieService.getAll()
     .subscribe(res=>{
@@ -32,16 +32,16 @@ this.getData();
 onCategoryDetails(C: Category) {
   this.router.navigateByUrl("/productCategory/"+C.categoryName);
 }
-forUser() {
-  this.userService.forUser().subscribe(
-    (response) => {
-      console.log(response);
-    },
-    (error)=>{
-      console.log(error);
-    }
-  );
-}
+// forUser() {
+//   this.userService.forUser().subscribe(
+//     (response) => {
+//       console.log(response);
+//     },
+//     (error)=>{
+//       console.log(error);
+//     }
+//   );
+// }
 
 getData() {
   this.categorieService.getAll().subscribe(

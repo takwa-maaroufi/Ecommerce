@@ -7,6 +7,7 @@ import { CartItem } from '../models/cart-item';
 import { Produit } from '../models/produit.model';
 import { CartService } from '../service/cart.service';
 import { PanierService } from '../service/panier.service';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-panier',
@@ -20,9 +21,10 @@ export class PanierComponent implements OnInit {
   cartTotalPrice :any
   pay_type = "cash_on_delivery";
   delivery_address = "";
-    constructor(private router:Router,private cartService:CartService,private http:HttpServiceService) { }
+    constructor(private router:Router,private cartService:CartService,private http:HttpServiceService, private userService:UserService) { }
 
   ngOnInit() {
+    this.forUser();
     this.getCartDetailsByUser();
     //below function will be triggerd from when removing and qty  is changing..
     this.cartService.cartServiceEvent.subscribe(data=>{
@@ -31,6 +33,17 @@ export class PanierComponent implements OnInit {
       this.cartTotalPrice  = this.cartService.cartTotalPrice;
     });
 
+  }
+
+  forUser() {
+    this.userService.forUser().subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error)=>{
+        console.log(error);
+      }
+    );
   }
 
      incrementQty(F:any,qty:any){

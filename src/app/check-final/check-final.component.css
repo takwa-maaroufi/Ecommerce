@@ -1,0 +1,100 @@
+.item{
+  border: 2px solid rgb(181, 180, 180);
+margin:0.5%;
+height: 220px;
+width: 2000px;
+position: relative;
+}
+.container{
+  width: max-content;
+  position: relative;
+  margin-bottom:10%;
+}
+.d-flex{
+  margin-top: 4%;
+  margin-left: 8%;
+margin-bottom: 10%;
+width: 10%;
+}
+
+.item a img{
+width: 70%;
+margin-left: 15%;
+margin-top: 20%;
+}
+h6{
+  margin-top: 5%;
+  text-align: center;
+  color:#2B2B68;
+  font-family: poppins, bold;
+  font-weight: 100;
+  font-size: 15px;
+}
+.item:hover{
+  transform: scale(1.03,1.03);
+  box-shadow:2px 2px  whitesmoke;
+
+;
+}
+.m{
+height:150px;
+  border: 2px solid #2B2B68 ;
+  width: 1290px;
+  margin-left: 150px;
+  margin-top: 2.5%;
+  background-color: whitesmoke;
+  border: whitesmoke;
+}
+.card{
+  height: 390px;
+  width: 280px;
+  margin: 1%;
+  background-color: whitesmoke;
+  border: whitesmoke;
+
+}
+.card:hover{
+  transform: scale(1.05,1.05);
+  box-shadow: 1px grey;
+}
+
+.row{
+  margin-left: 3%;
+}
+.card img{
+position: absolute;
+width: 50%;
+padding-top: 15%;
+margin-left: 25%;
+}
+.card .nom{
+  padding-top: 90%;
+}
+p{
+  color: #2B2B68;
+
+  font-family: poppins,bold;
+}
+.price{
+  margin-top: 3%;
+}
+.card{
+  position: relative;
+}
+.bouton{
+  background-color: #FF5330;
+  border:2px solid #FF5330;
+  border-radius: 0%;
+  margin-left: 7%;
+  margin-top: 1%;
+  margin-bottom: -5%;
+  font-size: large;
+}
+.m p{
+  position: relative;
+  padding-top: 8px ;
+  padding-left: 5%;
+}
+ p .bare{
+  font-size: 100%;
+}
