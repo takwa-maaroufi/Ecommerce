@@ -3,12 +3,12 @@
     margin-left: 10%;
     }
     .categorie{
-        background-image: url('../../assets/image/Group836.png');
-        width: 11%;
+        background-color: lightgray;
+        width: 50%;
         color: #2B2B68;
         font-weight: bold;
-        margin-bottom: 10%;
-    
+        padding-top: 1%;
+        margin-left: 20%;
     }
     .center{
         display: block;

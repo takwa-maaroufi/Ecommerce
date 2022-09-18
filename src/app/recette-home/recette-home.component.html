@@ -1,10 +1,13 @@
 <section class="container recipe-container mt-5">
     <div class="catrgories">
-      <h1>Categories</h1>
+      <!-- <h1>Categories</h1> -->
       <div
         class="row row-cols-1 row-cols-sm-3 row-cols-md-6 g-5 text-center gap-5 text-center recipe-categories mt-2"
       >
-        <div class="col-lg-2 col-sm-4 categorie">
+      <div class="col-lg-2 col-sm-4 categorie">
+        <h1>Des recettes simple</h1>
+      </div>
+        <!-- <div class="col-lg-2 col-sm-4 categorie">
           <img class="center" src="../../assets/image/Rectangle 29.png" width="100px" />
           <p>Health</p>
         </div>
@@ -27,15 +30,14 @@
         <div class="col-lg-2 col-sm-4 categorie">
           <img class="center" src="../../assets/image/Rectangle 34.png" width="100px" />
           <p>Plats</p>
-        </div>
+        </div> -->
       </div>
     </div>
 
     <div class="recipes mt-5">
-      <div class="recipe-title text-center">
+      <!-- <div class="recipe-title text-center">
           <h1>Des recettes simple</h1>
-          <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore dolores, mollitia dolorem nesciunt doloremque vel</p> -->
-      </div>
+      </div> -->
       <div class="all-recipes row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5  gap-5  mt-5">
           <div *ngFor="let recette of recettes" class="recipe-cart col-lg-3 col-sm-12">
               <a href="/recetteDetails/{{recette.id}}">
@@ -60,18 +62,6 @@
                 </div>
               </a>
           </div>
-      </div>
-
-      <div class=" mb-5 row row-cols-1 row-cols-sm-2 row-cols-md-2 g-5  gap-5 mt-5">
-          <div class="health col-lg-5 col-sm-12">
-              <h1>Vos questions à notre nutritionniste</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, deleniti voluptatum? Qui magni impedit in nulla explicabo labore repellat consequatur </p>
-              <button type="submit" class="nutri-btn mt-3">Votre question</button>
-          </div>
-          <div class="col-lg-6 col-sm-12">
-              <img src="../../assets/image/nutritionniste.jpg"  width="600px">
-          </div>
-
       </div>
     </div>
   </section>
